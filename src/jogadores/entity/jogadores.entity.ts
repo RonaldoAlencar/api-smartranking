@@ -1,4 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity()
 export class Jogadores {
@@ -14,7 +20,7 @@ export class Jogadores {
   @Column()
   email: string;
 
-  @Column({ default: 99})
+  @Column({ default: 99 })
   posicaoRanking: number;
 
   @Column({ default: null })

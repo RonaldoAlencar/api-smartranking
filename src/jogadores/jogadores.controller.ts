@@ -23,15 +23,18 @@ export class JogadoresController {
 
   @Post()
   @UsePipes(ValidationPipe)
-  async criarJogador(@Body() criarJogadorDto: CriarJogadorDto): Promise<Resposta> {
+  async criarJogador(
+    @Body() criarJogadorDto: CriarJogadorDto,
+  ): Promise<Resposta> {
     return this.jogadoresService.criarJogador(criarJogadorDto);
   }
 
   @Put('/:id')
   @UsePipes(ValidationPipe)
   async AtualizarJogador(
-    @Body() atualizarJogadorDto: AtualizarJogadorDto, 
-    @Param('id', JogadoresValidatorParamPipe) id: number): Promise<Resposta> {
+    @Body() atualizarJogadorDto: AtualizarJogadorDto,
+    @Param('id', JogadoresValidatorParamPipe) id: number,
+  ): Promise<Resposta> {
     return this.jogadoresService.atualizarJogador(id, atualizarJogadorDto);
   }
 
@@ -41,18 +44,23 @@ export class JogadoresController {
   }
 
   @Get('/busca')
-  async listarJogadoresPorNome(@Query('email', JogadoresValidatorParamPipe) email: string): Promise<Resposta> {
+  async listarJogadoresPorNome(
+    @Query('email', JogadoresValidatorParamPipe) email: string,
+  ): Promise<Resposta> {
     return this.jogadoresService.consultarJogadorPeloEmail(email);
   }
 
   @Get('/:id')
-  async listarJogadoresPorId(@Param('id', JogadoresValidatorParamPipe) id: number): Promise<Resposta> {
+  async listarJogadoresPorId(
+    @Param('id', JogadoresValidatorParamPipe) id: number,
+  ): Promise<Resposta> {
     return this.jogadoresService.consultarJogadorPeloId(id);
   }
 
   @Delete('/:id')
   async apagarJogador(
-    @Param('id', JogadoresValidatorParamPipe) id: number): Promise<Resposta> {
-      return this.jogadoresService.apagarJogador(id);
+    @Param('id', JogadoresValidatorParamPipe) id: number,
+  ): Promise<Resposta> {
+    return this.jogadoresService.apagarJogador(id);
   }
 }

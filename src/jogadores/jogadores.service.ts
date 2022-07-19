@@ -28,7 +28,7 @@ export class JogadoresService {
     if (isjogadorAlreadyCreated) {
       throw new BadRequestException({
         statusCode: 400,
-        message: `Jogador com o email ${criarJogadorDto.email} jÃÂ¡ existe`,
+        message: `Jogador com o email ${criarJogadorDto.email} já existe`,
         data: {},
       });
     }
@@ -144,7 +144,7 @@ export class JogadoresService {
     if (!jogadorEncontrado) {
       throw new NotFoundException({
         statusCode: 404,
-        message: `Jogador com o email ${email} nÃÂ£o encontrado`,
+        message: `Jogador com o email ${email} não encontrado`,
         data: {},
       });
     }

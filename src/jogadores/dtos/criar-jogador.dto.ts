@@ -6,7 +6,7 @@ export class CriarJogadorDto {
 
   @IsNotEmpty({ message: 'O campo telefone celular é obrigatório' })
   telefoneCelular: string;
-  
-  @IsEmail({},{ message: 'O email informado não é um email válido' })
+
+  @IsEmail({}, { message: 'O email informado não é um email válido' })
   email: string;
 }
