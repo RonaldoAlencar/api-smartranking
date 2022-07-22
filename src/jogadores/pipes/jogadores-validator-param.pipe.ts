@@ -13,7 +13,6 @@ export class JogadoresValidatorParamPipe implements PipeTransform {
         statusCode: 400,
       });
     }
-
     return value;
   }
 }
